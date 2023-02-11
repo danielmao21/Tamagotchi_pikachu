@@ -31,17 +31,17 @@
 .botones {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: auto;
     height: 50px;
-    width: 70%;
+    width: 90%;
     background-color: rgb(255, 0, 0);
 
 }
 
 .btn {
     background-color: yellow;
-    width: 40%;
+    width: 30%;
     border-radius: 90%;
     cursor: pointer;
 }

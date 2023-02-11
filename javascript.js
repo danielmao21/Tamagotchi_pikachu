@@ -1,6 +1,7 @@
 const img = document.getElementById("pikachu")
 const progreso = document.getElementById("progreso");
-var button = document.getElementById("incremento")
+var button = document.getElementById("incremento");
+let reset = document.getElementById("reset");
 let cantidad = 120;
 
 
@@ -8,7 +9,8 @@ let anchopadre = progreso.parentNode.offsetWidth;
 
 console.log(anchopadre);
 
-let decremento = setInterval(() => {
+function myfunction(){
+
   cantidad += -10;
 
   progreso.style.width = `${cantidad}%`;
@@ -30,12 +32,22 @@ let decremento = setInterval(() => {
     img.src = "/img/pikachu_dead.png";
     clearInterval(decremento)
   }
-}, 1000);
-
+}
+intervalo = setInterval(myfunction,2000)
 
 // ensayo
-;
 button.addEventListener("click", function() {
 
   cantidad = 120;
+})
+
+reset.addEventListener("click", function() {
+
+  if (cantidad ==0) {
+    
+  }
+  clearInterval(intervalo);
+  cantidad=120; // Limpiamos el intervalo anterior
+  intervalo = setInterval(myfunction, 700); 
+  // Volvemos a iniciar el intervalo
 });
