@@ -1,53 +1,76 @@
 const img = document.getElementById("pikachu")
-const progreso = document.getElementById("progreso");
-var button = document.getElementById("incremento");
+const decreceFood = document.getElementById("decreceFood");
+const decreceSleep = document.getElementById("decreceSleep");
+var incrementoFood = document.getElementById("incrementoFood");
+var  incrementosleep = document.getElementById("incrementoSleep");
 let reset = document.getElementById("reset");
-let cantidad = 120;
+let cantidadFood = 110;
+let cantidadSleep =110;
 
 
-let anchopadre = progreso.parentNode.offsetWidth;
+function decremento(){
 
-console.log(anchopadre);
+  cantidadFood += -10;
+  cantidadSleep += -10;
 
-function myfunction(){
+  decreceFood.style.width = `${cantidadFood}%`;
+  decreceSleep.style.width = `${cantidadSleep}%`;
 
-  cantidad += -10;
-
-  progreso.style.width = `${cantidad}%`;
-
-  if (cantidad == 100) {
-     console.log("am");
+  if (cantidadFood == 100 ) {
+     console.log("HELLO !");
      img.src = "/img/pikachu_happy.png";
-  } else if (cantidad == 60) {
-
+  } else if (cantidadFood == 60) {
     console.log("estoy enojado")
     img.src = "/img/pikachu_food.png";
   }
-  else if (cantidad == 30) {
+  else if(cantidadSleep==60){
+    console.log("quiero dormir")
+    img.src = "/img/Pikachu_sleep.png";
+  }
+  else if (cantidadFood == 30) {
     console.log("me estoy mueriendo")
     img.src = "/img/pikachu_angry.png";
   }
-  else if (cantidad == 0) {
+  else if(cantidadSleep == 30){
+    console.log("me estoy duermiendo")
+    img.src = "/img/pikachu_zzz.png";
+  }
+  else if (cantidadFood == 0 || cantidadSleep ==00) {
     console.log("estoy muerto")
     img.src = "/img/pikachu_dead.png";
     clearInterval(decremento)
   }
+ 
 }
-intervalo = setInterval(myfunction,2000)
+intervalo = setInterval(decremento,2000)
 
 // ensayo
-button.addEventListener("click", function() {
 
-  cantidad = 120;
+
+incrementoFood.addEventListener("click", function() {
+  
+    cantidadFood = 110;
+    console.log("Aumento food");
+
+  
 })
+
+incrementosleep.addEventListener("click", function() {
+  
+  cantidadSleep = 110;
+  console.log("Aumento Sleep");
+
+
+})
+
 
 reset.addEventListener("click", function() {
 
-  if (cantidad ==0) {
-    
-  }
-  clearInterval(intervalo);
-  cantidad=120; // Limpiamos el intervalo anterior
-  intervalo = setInterval(myfunction, 700); 
+  // Limpiamos el intervalo anterior
+
+  cantidadFood=110;
+  cantidadSleep=110; 
+  intervalo = setInterval(decremento, 2000); 
+  console.log("RESTART GAME")
   // Volvemos a iniciar el intervalo
 });

@@ -49,13 +49,7 @@
 
 /* hoooooo */
 
-.progress1 {
-    width: 80%;
-    background-color: rgb(255, 0, 0);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-}
+
 
 .progress-bar-comida {
     background-color: green;
@@ -68,32 +62,17 @@
 }
 
 .bar {
-    width: 20%;
+    width: 80%;
     height: 20px;
-    border: 1px solid black;
-    background-color: red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: rgb(255, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
 }
 
 .progreso {
     width: 0;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(26, 194, 11);
 }
 
-#bar2 {
-    width: 200px;
-    height: 20px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #progress {
-    width: 0;
-    height: 100%;
-    background-color: blue;
-  }
