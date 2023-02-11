@@ -10,8 +10,8 @@ let cantidadSleep =110;
 
 function decremento(){
 
-  cantidadFood += -10;
-  cantidadSleep += -10;
+  cantidadFood += -5;
+  cantidadSleep += -5;
 
   decreceFood.style.width = `${cantidadFood}%`;
   decreceSleep.style.width = `${cantidadSleep}%`;
@@ -35,7 +35,7 @@ function decremento(){
     console.log("me estoy duermiendo")
     img.src = "/img/pikachu_zzz.png";
   }
-  else if (cantidadFood == 0 || cantidadSleep ==00) {
+  else if (cantidadFood == 0 && cantidadSleep ==0) {
     console.log("estoy muerto")
     img.src = "/img/pikachu_dead.png";
     clearInterval(decremento)
