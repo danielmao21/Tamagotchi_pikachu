@@ -35,7 +35,7 @@ function decremento(){
     console.log("me estoy duermiendo")
     img.src = "/img/pikachu_zzz.png";
   }
-  else if (cantidadFood == 0 && cantidadSleep ==0) {
+  else if (cantidadFood == 0 || cantidadSleep ==0) {
     console.log("estoy muerto")
     img.src = "/img/pikachu_dead.png";
     clearInterval(decremento)
